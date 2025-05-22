@@ -34,7 +34,8 @@ export const BeatsSection = () => {
       }));
       $PlayList.set(songsToPlaylists);
     }
-  }, [sortedSongs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <section
       id="songs"
