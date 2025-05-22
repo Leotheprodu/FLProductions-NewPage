@@ -9,7 +9,11 @@ import { StarIcon } from "@/icons/StarIcon";
 import { VIPSongCriteria } from "@global/constants";
 export const BeatsSection = () => {
   const selectedSong = useStore($SelectedSong);
-  const sortedSongs = songs?.sort((a, b) => {
+  const sortedSongs = songs?.slice().sort((a, b) => {
+    // Primero los que tienen featured en true
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    // Luego por fecha descendente
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
     return dateB.getTime() - dateA.getTime();
@@ -58,11 +62,22 @@ export const BeatsSection = () => {
                 date: song.date,
               })
             }
-            className={`${
-              selectedSong?.id === song.id
-                ? "scale-105 border-b-2 border-b-secundario/80 shadow-lg"
-                : ""
-            } relative snap-x transition-transform duration-300 hover:cursor-pointer shadow hover:shadow-xl rounded-md flex flex-col  gap-1 p-4 w-[17rem] h-[13rem] md:h-[20rem] rounded-b-md bg-white group`}
+            className={`
+              ${
+                song.productionDetails.RecordingStudio &&
+                VIPSongCriteria.includes(
+                  song.productionDetails.RecordingStudio
+                ) &&
+                song.productionDetails.BeatFrom &&
+                VIPSongCriteria.includes(song.productionDetails.BeatFrom)
+                  ? "bg-secundario/10"
+                  : "bg-white"
+              }
+              ${
+                selectedSong?.id === song.id
+                  ? "scale-105 border-b-2 border-b-secundario/80 shadow-lg"
+                  : ""
+              } relative snap-x transition-transform duration-300 hover:cursor-pointer shadow hover:shadow-xl rounded-md flex flex-col  gap-1 p-4 w-[17rem] h-[13rem] md:h-[20rem] rounded-b-md group`}
           >
             <div className="flex justify-between h-2/4 md:h-2/5 w-full">
               <div className="flex">
@@ -113,14 +128,12 @@ export const BeatsSection = () => {
                   {song.productionDetails.BeatFrom && (
                     <small
                       className={`
-                      flex p-1 rounded-md bg-gray-100 ${
-                        VIPSongCriteria.includes(
-                          song.productionDetails.BeatFrom
-                        )
-                          ? "border-1 border-primario"
-                          : ""
-                      }
-                      `}
+                  flex p-1 rounded-md bg-gray-100 ${
+                    VIPSongCriteria.includes(song.productionDetails.BeatFrom)
+                      ? "border-1 border-primario"
+                      : ""
+                  }
+                  `}
                     >
                       <span className="">🎹</span>
                       {song.productionDetails.BeatFrom}
@@ -129,14 +142,12 @@ export const BeatsSection = () => {
                   {song.productionDetails.VideoStudio && (
                     <small
                       className={`
-                      flex p-1 rounded-md bg-gray-100 ${
-                        VIPSongCriteria.includes(
-                          song.productionDetails.VideoStudio
-                        )
-                          ? "border-1 border-primario"
-                          : ""
-                      }
-                      `}
+                  flex p-1 rounded-md bg-gray-100 ${
+                    VIPSongCriteria.includes(song.productionDetails.VideoStudio)
+                      ? "border-1 border-primario"
+                      : ""
+                  }
+                  `}
                     >
                       <span className="">🎥</span>
                       {song.productionDetails.VideoStudio}
@@ -173,11 +184,22 @@ export const BeatsSection = () => {
                 date: song.date,
               })
             }
-            className={`${
-              selectedSong?.id === song.id
-                ? "bg-secundario/40 border-b-2 border-b-secundario/80 shadow-lg"
-                : "bg-white border-b-2 border-b-gray-200"
-            } relative snap-x transition-transform duration-300 hover:cursor-pointer hover:border-primario justify-center items-center flex gap-1 p-4 w-full md:h-[5rem] group`}
+            className={`
+              ${
+                song.productionDetails.RecordingStudio &&
+                VIPSongCriteria.includes(
+                  song.productionDetails.RecordingStudio
+                ) &&
+                song.productionDetails.BeatFrom &&
+                VIPSongCriteria.includes(song.productionDetails.BeatFrom)
+                  ? "bg-secundario/10"
+                  : "bg-white"
+              }
+              ${
+                selectedSong?.id === song.id
+                  ? "bg-secundario/40 border-b-2 border-b-secundario/80 shadow-lg"
+                  : " border-b-2 border-b-gray-200"
+              } relative snap-x transition-transform duration-300 hover:cursor-pointer hover:border-primario justify-center items-center flex gap-1 p-4 w-full md:h-[5rem] group`}
           >
             <div className="flex items-center w-2/5 h-full">
               <div className="flex flex-col ">

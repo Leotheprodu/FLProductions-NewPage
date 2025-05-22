@@ -225,7 +225,7 @@ export const MusicPlayer = () => {
           />
 
           <div className="absolute flex h-[4rem] w-full items-center justify-center overflow-hidden">
-            <div className="pointer-events-none absolute z-10 h-screen w-screen blur-xs">
+            <div className="pointer-events-none absolute z-10 h-screen w-screen blur-xs bg-white">
               <ReactPlayer
                 className=""
                 width="100%"

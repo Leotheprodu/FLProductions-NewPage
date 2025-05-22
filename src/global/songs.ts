@@ -20,9 +20,9 @@ export const songs: Song[] = [
     artists: ["LeoTheProdu", "Fátima Pinto"],
     tags: ["Pop", "Remix", "EDM Trap"],
     date: new Date("2017-08-24"),
-    featured: true,
+    featured: false,
     productionDetails: {
-      BeatFrom: "FLProductions",
+      BeatFrom: "FLProd.",
     },
     youtubeId: "kUDCr5UTBoU",
   },
@@ -34,9 +34,9 @@ export const songs: Song[] = [
     date: new Date("2022-11-01"),
     featured: false,
     productionDetails: {
-      BeatFrom: "FLProductions",
+      BeatFrom: "FLProd.",
       VideoStudio: "Edriel",
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "-3IR-HfOqLo",
   },
@@ -48,7 +48,7 @@ export const songs: Song[] = [
     date: new Date("2023-07-23"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "vJ6TX5kkk3U",
   },
@@ -60,7 +60,7 @@ export const songs: Song[] = [
     date: new Date("2024-09-12"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "kCDYp6FuWgk",
   },
@@ -72,7 +72,7 @@ export const songs: Song[] = [
     date: new Date("2024-02-06"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "2cU3JpkVR5Y",
   },
@@ -85,7 +85,7 @@ export const songs: Song[] = [
     featured: false,
     productionDetails: {
       BeatFrom: "Ackee Beats",
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "SnZNVXcYRXg",
   },
@@ -98,7 +98,7 @@ export const songs: Song[] = [
     featured: false,
     productionDetails: {
       BeatFrom: "DJ Otoya",
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
       VideoStudio: "D-Again",
     },
     youtubeId: "bmaDpQ-5eF8",
@@ -111,9 +111,9 @@ export const songs: Song[] = [
     date: new Date("2023-09-29"),
     featured: true,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
       VideoStudio: "Chritian Arri",
-      BeatFrom: "FLProductions",
+      BeatFrom: "FLProd.",
     },
     youtubeId: "t3rxM8PPm5Q",
   },
@@ -131,11 +131,11 @@ export const songs: Song[] = [
     id: 10,
     name: "Don't Stop",
     artists: ["V-Shon"],
-    tags: ["Afrobeat", "Cristiano"],
+    tags: ["Reggae", "Positive"],
     date: new Date("2023-08-16"),
     featured: true,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "6Og0qnTUSIU",
   },
@@ -147,7 +147,7 @@ export const songs: Song[] = [
     date: new Date("2023-08-05"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "72EV9GRB3Eo",
   },
@@ -169,8 +169,8 @@ export const songs: Song[] = [
     date: new Date("2023-05-05"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
-      BeatFrom: "FLProductions",
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
       VideoStudio: "Kachorro's Films",
     },
     youtubeId: "2887f7Oy74Y",
@@ -193,7 +193,7 @@ export const songs: Song[] = [
     date: new Date("2022-10-11"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "1_2rLpumueo",
   },
@@ -205,8 +205,8 @@ export const songs: Song[] = [
     date: new Date("2022-10-07"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
-      BeatFrom: "FLProductions",
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
     },
     youtubeId: "J-tlj_G-n7E",
   },
@@ -218,8 +218,8 @@ export const songs: Song[] = [
     date: new Date("2022-10-07"),
     featured: false,
     productionDetails: {
-      BeatFrom: "FLProductions",
-      RecordingStudio: "FLProductions",
+      BeatFrom: "FLProd.",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "AjGLEN6PlR8",
   },
@@ -231,8 +231,8 @@ export const songs: Song[] = [
     date: new Date("2022-09-29"),
     featured: false,
     productionDetails: {
-      BeatFrom: "FLProductions",
-      RecordingStudio: "FLProductions",
+      BeatFrom: "FLProd.",
+      RecordingStudio: "FLProd.",
       VideoStudio: "Ebbydangmusic",
     },
     youtubeId: "Gj9n4OgWcrM",
@@ -245,8 +245,8 @@ export const songs: Song[] = [
     date: new Date("2022-09-07"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
-      BeatFrom: "FLProductions",
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
     },
     youtubeId: "npwmnYrKuLQ",
   },
@@ -268,7 +268,7 @@ export const songs: Song[] = [
     date: new Date("2021-03-12"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "8uMV8n13_ec",
   },
@@ -280,7 +280,7 @@ export const songs: Song[] = [
     date: new Date("2020-11-07"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "zXSBaqLcYcc",
   },
@@ -292,7 +292,7 @@ export const songs: Song[] = [
     date: new Date("2020-08-22"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "2HgWOGFsZdk",
   },
@@ -304,7 +304,7 @@ export const songs: Song[] = [
     date: new Date("2015-06-01"),
     featured: false,
     productionDetails: {
-      RecordingStudio: "FLProductions",
+      RecordingStudio: "FLProd.",
     },
     youtubeId: "M0oru0276wE",
   },
