@@ -192,7 +192,7 @@ export const BeatsSection = () => {
                 ) &&
                 song.productionDetails.BeatFrom &&
                 VIPSongCriteria.includes(song.productionDetails.BeatFrom)
-                  ? "bg-secundarioRow. /10"
+                  ? "bg-secundario/10"
                   : "bg-white"
               }
               ${
