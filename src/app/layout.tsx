@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     siteName: `${appName}`,
     images: [
       {
-        url: "/logo_ackee.png",
+        url: "https://storage.cloud.google.com/flproductions/build_main/img/banners/music/28.avif",
         width: 1024,
         height: 1024,
-        alt: "ackee beats logo",
+        alt: "FLProductions",
       },
     ],
     locale: "es_CR",
@@ -61,8 +61,8 @@ export default function RootLayout({
     <html lang="es">
       <body className="bg-white">
         <Toaster />
-        <main className=" container mx-auto px-8 py-2">
-          <header className="flex flex-col md:flex-row items-center justify-between">
+        <main className="container mx-auto py-2">
+          <header className="flex flex-col md:flex-row items-center justify-between py-5 px-10">
             <Link
               href="/"
               className="flex items-center space-x-2 logoFLP text-2xl font-bold text-primario"
@@ -91,7 +91,7 @@ export default function RootLayout({
           {children}
           <MusicPlayer />
           {/* Footer */}
-          <footer className="text-right text-sm mt-2">
+          <footer className="text-right text-sm mt-2 mx-6">
             <p className="">
               © 2013 - {currentYear}{" "}
               <span className=" font-bold">FLProductions</span> by LeotheProdu

@@ -1,9 +1,12 @@
 import { ContactUsForm } from "./components/ContactUsForm";
 import { BeatsSection } from "./components/BeatsSection";
+import { BannerSlider } from "./components/BannerSlider";
+import { bannerSliderHomeData } from "@global/bannerSliderHomeData";
 
 export default function Home() {
   return (
     <>
+      <BannerSlider datos={bannerSliderHomeData} />
       <section className="text-center py-20 px-6">
         <div>
           <h1 className="md:text-5xl text-3xl font-bold mb-4 md:w-1/2 w-full mx-auto">
@@ -56,7 +59,7 @@ export default function Home() {
         </ul>
       </section>
       <BeatsSection />
-      <div className="flex flex-col md:flex-row items-center gap-5 bg-primario p-6">
+      <div className="flex flex-col md:flex-row items-center gap-5 bg-primario p-6 mx-6">
         <section
           id="about"
           className="md:w-2/3 w-full text-white p-6 flex flex-col items-center rounded-lg"
