@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: `${appName}`,
     images: [
       {
-        url: "https://storage.cloud.google.com/flproductions/build_main/img/banners/music/28.avif",
+        url: "/leo_estudio_dibujo.jpg",
         width: 1024,
         height: 1024,
         alt: "FLProductions",
