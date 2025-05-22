@@ -308,4 +308,33 @@ export const songs: Song[] = [
     },
     youtubeId: "M0oru0276wE",
   },
+  {
+    id: 25,
+    name: "Quisiera",
+    artists: ["Cesar JS"],
+    tags: ["Reggae", "Positivo"],
+    date: new Date("2025-05-16"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      
+    },
+    youtubeId: "edZhTp0-lvI",
+  },
+  {
+    id: 26,
+    name: "818",
+    artists: ["KGM"],
+    tags: ["Reggaeton"],
+    date: new Date("2025-05-14"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "FLProd.",
+      
+    },
+    youtubeId: "HM0PIkyx6_s",
+  },
 ];
