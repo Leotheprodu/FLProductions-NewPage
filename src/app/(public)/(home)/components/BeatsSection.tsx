@@ -34,7 +34,7 @@ export const BeatsSection = () => {
       }));
       $PlayList.set(songsToPlaylists);
     }
-  }, []);
+  }, [sortedSongs]);
   return (
     <section
       id="songs"
