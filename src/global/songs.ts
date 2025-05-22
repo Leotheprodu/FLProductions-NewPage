@@ -318,7 +318,6 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      
     },
     youtubeId: "edZhTp0-lvI",
   },
@@ -333,7 +332,6 @@ export const songs: Song[] = [
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
       VideoStudio: "FLProd.",
-      
     },
     youtubeId: "HM0PIkyx6_s",
   },
@@ -358,7 +356,7 @@ export const songs: Song[] = [
     featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
-      VideoStudio: "FLProd."
+      VideoStudio: "FLProd.",
     },
     youtubeId: "pkLP7zdNBdI",
   },
@@ -371,7 +369,7 @@ export const songs: Song[] = [
     featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "pkLP7zdNBdI",
   },
@@ -384,7 +382,7 @@ export const songs: Song[] = [
     featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "BPm5k6x-UH8",
   },
@@ -398,7 +396,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Studio Savage"
+      VideoStudio: "Studio Savage",
     },
     youtubeId: "puMaYh084MM",
   },
@@ -412,7 +410,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "0P3x9xGBhRQ",
   },
@@ -426,7 +424,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "un3UkYuS2T4",
   },
@@ -440,7 +438,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "TOzuhihC4q8",
   },
@@ -454,7 +452,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "xBjfcxZgcmY",
   },
@@ -468,7 +466,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "0eDlErSQwRI",
   },
@@ -482,20 +480,20 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "Kachorro's Films"
+      VideoStudio: "Kachorro's Films",
     },
     youtubeId: "NApnEBSDKJA",
   },
   {
     id: 38,
     name: "Promesas",
-    artists: ["Jafet","Yerking", "Reilo"],
+    artists: ["Jafet", "Yerking", "Reilo"],
     tags: ["Dancehall", "Romántico"],
     date: new Date("2025-05-02"),
     featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
-      VideoStudio: "FLProd."
+      VideoStudio: "FLProd.",
     },
     youtubeId: "ib-6nUQZ3po",
   },
@@ -509,7 +507,7 @@ export const songs: Song[] = [
     productionDetails: {
       RecordingStudio: "FLProd.",
       BeatFrom: "FLProd.",
-      VideoStudio: "FLProd."
+      VideoStudio: "FLProd.",
     },
     youtubeId: "-pxtDkUtwoY",
   },
@@ -634,7 +632,7 @@ export const songs: Song[] = [
     },
     youtubeId: "SdXXlG0-F38",
   },
-   {
+  {
     id: 49,
     name: "Amenaza",
     artists: ["Cesar Js"],
@@ -648,7 +646,7 @@ export const songs: Song[] = [
     },
     youtubeId: "22Alpxz_ysw",
   },
-   {
+  {
     id: 50,
     name: "Nah fallow",
     artists: ["Cesar Js"],
@@ -662,7 +660,7 @@ export const songs: Song[] = [
     },
     youtubeId: "Qh8aeOzokUU",
   },
-   {
+  {
     id: 51,
     name: "Emociones",
     artists: ["Cesar Js"],
@@ -676,7 +674,7 @@ export const songs: Song[] = [
     },
     youtubeId: "0dIL6LDkwto",
   },
-   {
+  {
     id: 52,
     name: "Intro",
     artists: ["Cesar Js", "DJ Juan"],
@@ -690,7 +688,7 @@ export const songs: Song[] = [
     },
     youtubeId: "HRAAfgeuXtQ",
   },
-   {
+  {
     id: 53,
     name: "Franquicia",
     artists: ["Cesar Js"],
@@ -703,7 +701,8 @@ export const songs: Song[] = [
       VideoStudio: "",
     },
     youtubeId: "d63QMCDhXAA",
-   {
+  },
+  {
     id: 54,
     name: "We Up",
     artists: ["Cesar Js"],
@@ -717,7 +716,7 @@ export const songs: Song[] = [
     },
     youtubeId: "9zuPAjZDJ8Q",
   },
-   {
+  {
     id: 55,
     name: "BackShot",
     artists: ["Cesar Js"],
@@ -731,7 +730,7 @@ export const songs: Song[] = [
     },
     youtubeId: "k8fF6mTwgRw",
   },
-   {
+  {
     id: 56,
     name: "Tu Bandera",
     artists: ["Cesar Js", "Zophie"],
@@ -745,7 +744,7 @@ export const songs: Song[] = [
     },
     youtubeId: "c_YT2qdAVS0",
   },
-   {
+  {
     id: 57,
     name: "La Vara",
     artists: ["Cesar Js"],
@@ -759,7 +758,7 @@ export const songs: Song[] = [
     },
     youtubeId: "XVRk9BSTqK0",
   },
-   {
+  {
     id: 58,
     name: "Budum",
     artists: ["Cesar Js"],
@@ -773,7 +772,7 @@ export const songs: Song[] = [
     },
     youtubeId: "JQmo_pdsnsQ",
   },
-   {
+  {
     id: 59,
     name: "Bubble",
     artists: ["Cesar Js"],
@@ -787,7 +786,7 @@ export const songs: Song[] = [
     },
     youtubeId: "9yinMAiEnkE",
   },
-   {
+  {
     id: 60,
     name: "Cash",
     artists: ["Cesar Js"],
@@ -801,7 +800,7 @@ export const songs: Song[] = [
     },
     youtubeId: "A-Lq0pvkYWI",
   },
-   {
+  {
     id: 61,
     name: "Dancehall Never Die",
     artists: ["Cesar Js"],
@@ -815,7 +814,7 @@ export const songs: Song[] = [
     },
     youtubeId: "A-Lq0pvkYWI",
   },
-   {
+  {
     id: 62,
     name: "Welcome to the Jungle",
     artists: ["Cesar Js"],
