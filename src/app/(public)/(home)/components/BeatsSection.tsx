@@ -62,7 +62,7 @@ export const BeatsSection = () => {
               selectedSong?.id === song.id
                 ? "scale-105 border-b-2 border-b-secundario/80 shadow-lg"
                 : ""
-            } relative snap-x transition-transform duration-300 hover:cursor-pointer shadow hover:shadow-xl rounded-md flex flex-col  gap-1 p-4 w-[17rem] h-[12rem] md:h-[20rem] rounded-b-md bg-white group`}
+            } relative snap-x transition-transform duration-300 hover:cursor-pointer shadow hover:shadow-xl rounded-md flex flex-col  gap-1 p-4 w-[17rem] h-[13rem] md:h-[20rem] rounded-b-md bg-white group`}
           >
             <div className="flex justify-between h-2/4 md:h-2/5 w-full">
               <div className="flex">
@@ -93,12 +93,12 @@ export const BeatsSection = () => {
             </div>
             <div>
               <div className="h-1/4 md:h-1/5 w-full text-sm text-gray-600">
-                <p className="hidden md:flex my-2">{song.tags.join(", ")}</p>
+                <p className="flex my-2">{song.tags.join(", ")}</p>
 
                 <div className="flex gap-2">
                   {song.productionDetails.RecordingStudio && (
                     <small
-                      className={`hidden md:flex md:p-1 md:rounded-md md:bg-gray-100 ${
+                      className={`flex p-1 rounded-md bg-gray-100 ${
                         VIPSongCriteria.includes(
                           song.productionDetails.RecordingStudio
                         )
@@ -113,7 +113,7 @@ export const BeatsSection = () => {
                   {song.productionDetails.BeatFrom && (
                     <small
                       className={`
-                      hidden md:flex md:p-1 md:rounded-md md:bg-gray-100 ${
+                      flex p-1 rounded-md bg-gray-100 ${
                         VIPSongCriteria.includes(
                           song.productionDetails.BeatFrom
                         )
@@ -129,7 +129,7 @@ export const BeatsSection = () => {
                   {song.productionDetails.VideoStudio && (
                     <small
                       className={`
-                      hidden md:flex md:p-1 md:rounded-md md:bg-gray-100 ${
+                      flex p-1 rounded-md bg-gray-100 ${
                         VIPSongCriteria.includes(
                           song.productionDetails.VideoStudio
                         )
@@ -184,38 +184,40 @@ export const BeatsSection = () => {
                 <div className="flex flex-col gap-1">
                   <div className="flex flex-wrap gap-1 items-center">
                     <h3 className="text-lg font-semibold">{song.name}</h3>
-                    {song.productionDetails.RecordingStudio &&
-                      VIPSongCriteria.includes(
-                        song.productionDetails.RecordingStudio
-                      ) && <StarIcon className="w-4 h-4 text-secundario" />}
-                    {song.productionDetails.BeatFrom &&
-                      VIPSongCriteria.includes(
-                        song.productionDetails.BeatFrom
-                      ) && <StarIcon className="w-4 h-4 text-secundario" />}
-                    {song.productionDetails.VideoStudio &&
-                      VIPSongCriteria.includes(
-                        song.productionDetails.VideoStudio
-                      ) && <StarIcon className="w-4 h-4 text-secundario" />}
                   </div>
-                  <p className="hidden md:flex text-sm text-gray-500">
+                  <p className="flex text-sm text-gray-500">
                     {song.artists.join(", ")}
                   </p>
                 </div>
               </div>
-              <small className="group-hover:scale-150 flex items-center justify-center rounded-full p-1 transition-all duration-300 absolute right-2">
-                <PlayIcon />
-              </small>
+              <div className=" absolute right-2 flex items-center justify-center">
+                {song.productionDetails.RecordingStudio &&
+                  VIPSongCriteria.includes(
+                    song.productionDetails.RecordingStudio
+                  ) && <StarIcon className="w-4 h-4 text-secundario" />}
+                {song.productionDetails.BeatFrom &&
+                  VIPSongCriteria.includes(song.productionDetails.BeatFrom) && (
+                    <StarIcon className="w-4 h-4 text-secundario" />
+                  )}
+                {song.productionDetails.VideoStudio &&
+                  VIPSongCriteria.includes(
+                    song.productionDetails.VideoStudio
+                  ) && <StarIcon className="w-4 h-4 text-secundario" />}
+                <small className="group-hover:scale-150 flex items-center justify-center rounded-full p-1 transition-all duration-300">
+                  <PlayIcon />
+                </small>
+              </div>
             </div>
-            <div className="flex flex-col w-1/5 md:w-2/5 justify-center h-full">
+            <div className="flex flex-col w-1/5 md:w-2/5 justify-center items-baseline h-full">
               <p className=" text-sm text-gray-600 ">{song.tags.join(", ")}</p>
-              <div className="hidden md:flex gap-2">
+              <div className="flex flex-col md:flex-row gap-1">
                 {song.productionDetails.RecordingStudio && (
                   <small
-                    className={`hidden md:flex md:p-1 md:rounded-md md:bg-gray-100 ${
+                    className={`flex md:p-1 rounded-md md:bg-gray-100 ${
                       VIPSongCriteria.includes(
                         song.productionDetails.RecordingStudio
                       )
-                        ? "border-1 border-primario"
+                        ? "md:border-1 md:border-primario"
                         : ""
                     }`}
                   >
@@ -226,13 +228,11 @@ export const BeatsSection = () => {
                 {song.productionDetails.BeatFrom && (
                   <small
                     className={`
-                      hidden md:flex md:p-1 md:rounded-md md:bg-gray-100 ${
-                        VIPSongCriteria.includes(
-                          song.productionDetails.BeatFrom
-                        )
-                          ? "border-1 border-primario"
-                          : ""
-                      }
+                     flex md:p-1 rounded-md md:bg-gray-100 ${
+                       VIPSongCriteria.includes(song.productionDetails.BeatFrom)
+                         ? "md:border-1 md:border-primario"
+                         : ""
+                     }
                       `}
                   >
                     <span className="">🎹</span>
@@ -242,13 +242,13 @@ export const BeatsSection = () => {
                 {song.productionDetails.VideoStudio && (
                   <small
                     className={`
-                      hidden md:flex md:p-1 md:rounded-md md:bg-gray-100 ${
-                        VIPSongCriteria.includes(
-                          song.productionDetails.VideoStudio
-                        )
-                          ? "border-1 border-primario"
-                          : ""
-                      }
+                     flex md:p-1 rounded-md md:bg-gray-100 ${
+                       VIPSongCriteria.includes(
+                         song.productionDetails.VideoStudio
+                       )
+                         ? "md:border-1 md:border-primario"
+                         : ""
+                     }
                       `}
                   >
                     <span className="">🎥</span>

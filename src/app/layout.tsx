@@ -62,7 +62,7 @@ export default function RootLayout({
       <body className="bg-white">
         <Toaster />
         <main className=" container mx-auto px-8 py-2">
-          <header className="flex items-center justify-between">
+          <header className="flex flex-col md:flex-row items-center justify-between">
             <Link
               href="/"
               className="flex items-center space-x-2 logoFLP text-2xl font-bold text-primario"
