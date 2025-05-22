@@ -337,4 +337,261 @@ export const songs: Song[] = [
     },
     youtubeId: "HM0PIkyx6_s",
   },
+  {
+    id: 27,
+    name: "Buenos Amigos",
+    artists: ["Williams"],
+    tags: ["DanceHall"],
+    date: new Date("2024-10-15"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+    },
+    youtubeId: "pT7QzVevaTE",
+  },
+  {
+    id: 28,
+    name: "Como Aquella Noche",
+    artists: ["Williams"],
+    tags: ["DanceHall"],
+    date: new Date("2024-12-18"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      VideoStudio: "FLProd."
+    },
+    youtubeId: "pkLP7zdNBdI",
+  },
+  {
+    id: 29,
+    name: "Ahora me llama",
+    artists: ["Yerking", "Joztin Bwoy", "Jafet", "Reilo"],
+    tags: ["DanceHall"],
+    date: new Date("2022-03-23"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "pkLP7zdNBdI",
+  },
+  {
+    id: 30,
+    name: "Kuchy Kuchy",
+    artists: ["El Daddy"],
+    tags: ["DanceHall"],
+    date: new Date("2021-12-24"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "BPm5k6x-UH8",
+  },
+  {
+    id: 31,
+    name: "Kuchy Kuchy",
+    artists: ["El Daddy"],
+    tags: ["DanceHall"],
+    date: new Date("2021-12-24"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "BPm5k6x-UH8",
+  },
+  {
+    id: 32,
+    name: "Quisiera",
+    artists: ["Beto G"],
+    tags: ["DanceHall", "Romántico"],
+    date: new Date("2022-04-16"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "0P3x9xGBhRQ",
+  },
+  {
+    id: 33,
+    name: "Quisiera",
+    artists: ["Beto G"],
+    tags: ["Reggae", "Romantic Style"],
+    date: new Date("2023-02-08"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "un3UkYuS2T4",
+  },
+  {
+    id: 34,
+    name: "María",
+    artists: ["Beto G"],
+    tags: ["Reggae", "Romantic Style"],
+    date: new Date("2021-10-20"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "TOzuhihC4q8",
+  },
+  {
+    id: 35,
+    name: "Porqué",
+    artists: ["Beto G"],
+    tags: ["Reggae", "Romantic Style"],
+    date: new Date("2020-12-03"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "xBjfcxZgcmY",
+  },
+  {
+    id: 36,
+    name: "A donde vas",
+    artists: ["KMG"],
+    tags: ["Reggaeton"],
+    date: new Date("2022-10-18"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "0eDlErSQwRI",
+  },
+  {
+    id: 37,
+    name: "Apocalipsis",
+    artists: ["KMG"],
+    tags: ["Trap"],
+    date: new Date("2024-04-18"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "Kachorro's Films"
+    },
+    youtubeId: "NApnEBSDKJA",
+  },
+  {
+    id: 38,
+    name: "Promesas",
+    artists: ["Jafet","Yerking", "Reilo"],
+    tags: ["Dancehall", "Romántico"],
+    date: new Date("2025-05-02"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "FLProd."
+    },
+    youtubeId: "ib-6nUQZ3po",
+  },
+  {
+    id: 39,
+    name: "20 kilómetros",
+    artists: ["Rousses"],
+    tags: ["Reggaeton", "Romántico"],
+    date: new Date("2023-01-26"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "FLProd."
+    },
+    youtubeId: "-pxtDkUtwoY",
+  },
+  {
+    id: 40,
+    name: "Antónimo de buena",
+    artists: ["Rousses"],
+    tags: ["Reggaeton", "Party"],
+    date: new Date("2020-03-17"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+    },
+    youtubeId: "h7ZjJTkcGSc",
+  },
+  {
+    id: 41,
+    name: "Alas Rotas",
+    artists: ["Rousses", "Colle M"],
+    tags: ["Hip Hop"],
+    date: new Date("2019-10-29"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+    },
+    youtubeId: "QijgL4rJjI0",
+  },
+  {
+    id: 42,
+    name: "Sosten mi mano",
+    artists: ["Rousses"],
+    tags: ["Hip Hop"],
+    date: new Date("2019-02-03"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "FLProd.",
+    },
+    youtubeId: "7DmXEoIEnjM",
+  },
+  {
+    id: 43,
+    name: "Yo Quiero",
+    artists: ["Rousses", "Guzza's", "D-Crown"],
+    tags: ["Hip Hop", "Trap"],
+    date: new Date("2018-11-12"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "FLProd.",
+      VideoStudio: "FLProd.",
+    },
+    youtubeId: "XHQJpAk-kHk",
+  },
+  {
+    id: 44,
+    name: "Badmind",
+    artists: ["Cesar Js"],
+    tags: ["Dancehall", "Tico Showtime"],
+    date: new Date("2025-03-26"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "Killa prod.",
+      VideoStudio: "Studio Savage",
+    },
+    youtubeId: "Fp1h8lpiWtE",
+  },
+  {
+    id: 45,
+    name: "Ten cuidado",
+    artists: ["Cesar Js"],
+    tags: ["Trap", "M.O.T.M"],
+    date: new Date("2025-04-30"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "DJ Otoya",
+    },
+    youtubeId: "SiTiH4FRC18",
+  },
 ];
