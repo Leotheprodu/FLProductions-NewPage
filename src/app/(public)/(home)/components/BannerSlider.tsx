@@ -22,8 +22,11 @@ export function BannerSlider({ datos }: Props) {
         interval={10000}
         showStatus={false}
         showIndicators={true}
-        emulateTouch
+        emulateTouch={false}
+        dynamicHeight={true}
         showThumbs={false}
+        swipeable={false}
+        transitionTime={1000}
       >
         {datos.map(({ img_link, link, title, description }) => (
           <div
@@ -31,7 +34,7 @@ export function BannerSlider({ datos }: Props) {
             className=" w-full h-[100vh] flex items-center justify-center text-center bg-primario"
             style={{
               background: `url(${img_link})`,
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
