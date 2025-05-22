@@ -1,0 +1,311 @@
+export type Song = {
+  id: number;
+  name: string;
+  youtubeId: string;
+  tags: string[];
+  artists: string[];
+  featured: boolean;
+  date: Date;
+  productionDetails: {
+    VideoStudio?: string;
+    RecordingStudio?: string;
+    BeatFrom?: string;
+  };
+};
+
+export const songs: Song[] = [
+  {
+    id: 1,
+    name: "Belong Together",
+    artists: ["LeoTheProdu", "Fátima Pinto"],
+    tags: ["Pop", "Remix", "EDM Trap"],
+    date: new Date("2017-08-24"),
+    featured: true,
+    productionDetails: {
+      BeatFrom: "FLProductions",
+    },
+    youtubeId: "kUDCr5UTBoU",
+  },
+  {
+    id: 2,
+    name: "Epicopile",
+    artists: ["Edriel"],
+    tags: ["Dembow", "Reggaeton", "Cumbia"],
+    date: new Date("2022-11-01"),
+    featured: false,
+    productionDetails: {
+      BeatFrom: "FLProductions",
+      VideoStudio: "Edriel",
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "-3IR-HfOqLo",
+  },
+  {
+    id: 3,
+    name: "Jump🍑Up🆙",
+    artists: ["TH1"],
+    tags: ["Afrobeat"],
+    date: new Date("2023-07-23"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "vJ6TX5kkk3U",
+  },
+  {
+    id: 4,
+    name: "Sirenas",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2024-09-12"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "kCDYp6FuWgk",
+  },
+  {
+    id: 5,
+    name: "En La Oscuridad (Londres 1888)",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2024-02-06"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "2cU3JpkVR5Y",
+  },
+  {
+    id: 6,
+    name: "Baila Pa Mi",
+    artists: ["D-Again"],
+    tags: ["Afrobeat"],
+    date: new Date("2023-12-21"),
+    featured: false,
+    productionDetails: {
+      BeatFrom: "Ackee Beats",
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "SnZNVXcYRXg",
+  },
+  {
+    id: 7,
+    name: "Bendecidos",
+    artists: ["Cesar JS", "D-Again"],
+    tags: ["Reggaeton"],
+    date: new Date("2023-11-29"),
+    featured: false,
+    productionDetails: {
+      BeatFrom: "DJ Otoya",
+      RecordingStudio: "FLProductions",
+      VideoStudio: "D-Again",
+    },
+    youtubeId: "bmaDpQ-5eF8",
+  },
+  {
+    id: 8,
+    name: "Caribbean Paradise",
+    artists: ["César Js", "Andrey Gonzáles", "Davis", "Zophie"],
+    tags: ["Afrobeat"],
+    date: new Date("2023-09-29"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+      VideoStudio: "Chritian Arri",
+      BeatFrom: "FLProductions",
+    },
+    youtubeId: "t3rxM8PPm5Q",
+  },
+  {
+    id: 9,
+    name: "Ángeles Caídas",
+    artists: ["FRANKOXXX"],
+    tags: ["HipHop"],
+    date: new Date("2023-09-22"),
+    featured: false,
+    productionDetails: {},
+    youtubeId: "yvuBpVl01Y0",
+  },
+  {
+    id: 10,
+    name: "Don't Stop",
+    artists: ["V-Shon"],
+    tags: ["Afrobeat", "Cristiano"],
+    date: new Date("2023-08-16"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "6Og0qnTUSIU",
+  },
+  {
+    id: 11,
+    name: "Busqueda Infinita",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2023-08-05"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "72EV9GRB3Eo",
+  },
+  {
+    id: 12,
+    name: "Art Attack",
+    artists: ["FRANKOXXX"],
+    tags: ["HipHop"],
+    date: new Date("2023-05-19"),
+    featured: false,
+    productionDetails: {},
+    youtubeId: "zwUaiwfiyVw",
+  },
+  {
+    id: 13,
+    name: "Solita",
+    artists: ["Fauricio Cruz"],
+    tags: ["Reggaeton"],
+    date: new Date("2023-05-05"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+      BeatFrom: "FLProductions",
+      VideoStudio: "Kachorro's Films",
+    },
+    youtubeId: "2887f7Oy74Y",
+  },
+  {
+    id: 14,
+    name: "Llorando",
+    artists: ["Fauricio Cruz"],
+    tags: ["Reggaeton"],
+    date: new Date("2023-03-16"),
+    featured: false,
+    productionDetails: {},
+    youtubeId: "1Ucf-egmgC4",
+  },
+  {
+    id: 15,
+    name: "Until We Meet Again",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2022-10-11"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "1_2rLpumueo",
+  },
+  {
+    id: 16,
+    name: "Adicto",
+    artists: ["Fauricio Cruz"],
+    tags: ["Rap"],
+    date: new Date("2022-10-07"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+      BeatFrom: "FLProductions",
+    },
+    youtubeId: "J-tlj_G-n7E",
+  },
+  {
+    id: 17,
+    name: "Hola Mamá",
+    artists: ["Fauricio Cruz"],
+    tags: ["DanceHall"],
+    date: new Date("2022-10-07"),
+    featured: false,
+    productionDetails: {
+      BeatFrom: "FLProductions",
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "AjGLEN6PlR8",
+  },
+  {
+    id: 18,
+    name: "Pobre Corazón",
+    artists: ["Fauricio Cruz"],
+    tags: ["Reggaeton"],
+    date: new Date("2022-09-29"),
+    featured: false,
+    productionDetails: {
+      BeatFrom: "FLProductions",
+      RecordingStudio: "FLProductions",
+      VideoStudio: "Ebbydangmusic",
+    },
+    youtubeId: "Gj9n4OgWcrM",
+  },
+  {
+    id: 19,
+    name: "Llega el Amor",
+    artists: ["Fauricio Cruz"],
+    tags: ["Bachata"],
+    date: new Date("2022-09-07"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+      BeatFrom: "FLProductions",
+    },
+    youtubeId: "npwmnYrKuLQ",
+  },
+  {
+    id: 20,
+    name: "süs",
+    artists: ["FRANKOXXX", "Lezs"],
+    tags: ["HipHop"],
+    date: new Date("2022-04-22"),
+    featured: false,
+    productionDetails: {},
+    youtubeId: "nDfKjWMLJpU",
+  },
+  {
+    id: 21,
+    name: "Even in the Rain",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2021-03-12"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "8uMV8n13_ec",
+  },
+  {
+    id: 22,
+    name: "Noches Sin Viento",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2020-11-07"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "zXSBaqLcYcc",
+  },
+  {
+    id: 23,
+    name: "Somos Los Que Somos",
+    artists: ["La Rana Roja"],
+    tags: ["Rock"],
+    date: new Date("2020-08-22"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "2HgWOGFsZdk",
+  },
+  {
+    id: 24,
+    name: "Traicionera",
+    artists: ["TH1"],
+    tags: ["Dancehall"],
+    date: new Date("2015-06-01"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProductions",
+    },
+    youtubeId: "M0oru0276wE",
+  },
+];
