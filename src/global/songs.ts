@@ -929,7 +929,7 @@ export const songs: Song[] = [
   {
     id: 70,
     name: "Nadie Sabe",
-    artists: ["Cesar JS", "Myztah Gonzo"],
+    artists: ["Myztah Gonzo","Cesar JS", "Charly Bless", "Mista Elegance", "Mr Ken"],
     tags: ["Dancehall", "FLProd.", "Gecko Music", "Fire Links", "CB Producciones"],
     date: new Date("2025-05-23"),
     featured: true,
