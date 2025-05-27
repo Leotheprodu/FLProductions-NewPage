@@ -926,4 +926,18 @@ export const songs: Song[] = [
     },
     youtubeId: "bulISmhzwp8",
   },
+  {
+    id: 70,
+    name: "Nadie Sabe",
+    artists: ["Cesar JS", "Myztah Gonzo"],
+    tags: ["Dancehall", "FLProd.", "Gecko Music", "Fire Links", "CB Producciones"],
+    date: new Date("2025-05-23"),
+    featured: true,
+    productionDetails: {
+      RecordingStudio: "Varios",
+      BeatFrom: "Piña Beats",
+      VideoStudio: "CB Producciones",
+    },
+    youtubeId: "7-SghTM8Y6Y",
+  },
 ];
