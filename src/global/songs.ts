@@ -109,7 +109,7 @@ export const songs: Song[] = [
     artists: ["César Js", "Andrey Gonzáles", "Davis", "Zophie"],
     tags: ["Afrobeat"],
     date: new Date("2023-09-29"),
-    featured: true,
+    featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
       VideoStudio: "Chritian Arri",
@@ -133,7 +133,7 @@ export const songs: Song[] = [
     artists: ["V-Shon"],
     tags: ["Reggae", "Positive"],
     date: new Date("2023-08-16"),
-    featured: true,
+    featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
     },
@@ -932,7 +932,7 @@ export const songs: Song[] = [
     artists: ["Myztah Gonzo","Cesar JS", "Charly Bless", "Mista Elegance", "Mr Ken"],
     tags: ["Dancehall", "FLProd.", "Gecko Music", "Fire Links", "CB Producciones"],
     date: new Date("2025-05-23"),
-    featured: true,
+    featured: false,
     productionDetails: {
       RecordingStudio: "Varios",
       BeatFrom: "Piña Beats",
@@ -946,10 +946,10 @@ export const songs: Song[] = [
     artists: ["Williams"],
     tags: ["Afrobeat"],
     date: new Date("2025-06-02"),
-    featured: false,
+    featured: true,
     productionDetails: {
       RecordingStudio: "FLProd.",
     },
-    youtubeId: "vvVu-fC1u8tbkxP5 ",
+    youtubeId: "cdf1uAHT62U",
   },
 ];
