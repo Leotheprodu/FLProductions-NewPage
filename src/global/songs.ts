@@ -940,4 +940,16 @@ export const songs: Song[] = [
     },
     youtubeId: "7-SghTM8Y6Y",
   },
+  {
+    id: 71,
+    name: "No dejo de pensarte",
+    artists: ["Williams"],
+    tags: ["Afrobeat"],
+    date: new Date("2025-06-02"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+    },
+    youtubeId: "vvVu-fC1u8tbkxP5 ",
+  },
 ];
