@@ -952,4 +952,18 @@ export const songs: Song[] = [
     },
     youtubeId: "cdf1uAHT62U",
   },
+  {
+    id: 72,
+    name: "Ten Cuidado",
+    artists: ["Cesar Js"],
+    tags: ["Trap", "Dancehall"],
+    date: new Date("2025-06-11"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      BeatFrom: "DJ Otoya",
+      VideoStudio: "Studio Savage",
+    },
+    youtubeId: "_3fOXsCijvI",
+  },
 ];
