@@ -946,7 +946,7 @@ export const songs: Song[] = [
     artists: ["Williams"],
     tags: ["Afrobeat"],
     date: new Date("2025-06-02"),
-    featured: true,
+    featured: false,
     productionDetails: {
       RecordingStudio: "FLProd.",
     },
