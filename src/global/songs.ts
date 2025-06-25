@@ -966,4 +966,17 @@ export const songs: Song[] = [
     },
     youtubeId: "_3fOXsCijvI",
   },
+  {
+    id: 73,
+    name: "My Love",
+    artists: ["Williams"],
+    tags: ["Dancehall", "Romantic"],
+    date: new Date("2025-06-24"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd.",
+      VideoStudio: "FLProd."
+    },
+    youtubeId: "2PXiT6hvNzw",
+  },
 ];
