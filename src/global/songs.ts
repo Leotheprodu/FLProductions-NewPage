@@ -979,4 +979,28 @@ export const songs: Song[] = [
     },
     youtubeId: "2PXiT6hvNzw",
   },
+  {
+    id: 74,
+    name: "Escuchar tu corazón",
+    artists: ["Frank Varvas"],
+    tags: ["Adoración", "Música Cristiana"],
+    date: new Date("2025-10-16"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd."
+    },
+    youtubeId: "8vQ-aSETimc",
+  },
+  {
+    id: 75,
+    name: "Nadie como tu",
+    artists: ["Frank Varvas"],
+    tags: ["Adoración", "Música Cristiana"],
+    date: new Date("2025-10-23"),
+    featured: false,
+    productionDetails: {
+      RecordingStudio: "FLProd."
+    },
+    youtubeId: "ylgTuZsHlK4",
+  },
 ];
