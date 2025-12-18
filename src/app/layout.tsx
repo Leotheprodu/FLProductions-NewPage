@@ -61,8 +61,8 @@ export default function RootLayout({
     <html lang="es">
       <body className="bg-white">
         <Toaster />
-        <main className="container mx-auto py-2">
-          <header className="flex flex-col md:flex-row items-center justify-between py-5 px-10">
+        <main className="w-full">
+          <header className="container mx-auto flex flex-col md:flex-row items-center justify-between py-5 px-10">
             <Link
               href="/"
               className="flex items-center space-x-2 logoFLP text-2xl font-bold text-primario"
@@ -91,7 +91,7 @@ export default function RootLayout({
           {children}
           <MusicPlayer />
           {/* Footer */}
-          <footer className="text-right text-sm mt-2 mx-6">
+          <footer className="container mx-auto text-right text-sm mt-10 mb-6 px-10">
             <p className="">
               © 2013 - {currentYear}{" "}
               <span className=" font-bold">FLProductions</span> by LeotheProdu

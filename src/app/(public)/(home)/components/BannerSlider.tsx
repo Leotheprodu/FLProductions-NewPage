@@ -31,7 +31,7 @@ export function BannerSlider({ datos }: Props) {
         {datos.map(({ img_link, link, title, description }) => (
           <div
             key={title}
-            className=" w-full h-[100vh] flex items-center justify-center text-center bg-primario"
+            className="relative w-full h-[100vh] flex items-center justify-center text-center overflow-hidden"
             style={{
               background: `url(${img_link})`,
               backgroundSize: "cover",
@@ -39,20 +39,60 @@ export function BannerSlider({ datos }: Props) {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className=" bg-black/60 p-6 rounded-lg text-white max-w-[40rem] backdrop-blur-md flex flex-col items-center">
-              <h2 className="text-secundario mb-4">{title}</h2>
-              <p className="text-amber-100">{description}</p>
-              {link && (
-                <div className="mt-4">
+            {/* Gradient Overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+
+            {/* Content */}
+            <div className="relative z-10 glass-dark p-8 md:p-12 rounded-3xl text-white max-w-[50rem] mx-4 border-2 border-primary/30 hover-glow animate-fade-in-up">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight">
+                {title}
+              </h1>
+              <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                {description}
+              </p>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8 text-sm">
+                <span className="glass px-4 py-2 rounded-full">
+                  ✅ 15+ Años
+                </span>
+                <span className="glass px-4 py-2 rounded-full">
+                  🎵 500+ Proyectos
+                </span>
+                <span className="glass px-4 py-2 rounded-full">
+                  ⭐ Calidad Premium
+                </span>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="#contact"
+                  className="bg-gradient-to-r from-primary to-primary-light text-dark font-bold px-8 py-4 rounded-xl hover-lift hover-glow transition-all text-lg"
+                >
+                  Contáctanos Ahora
+                </a>
+                {link && (
                   <Link
-                    className=" text-black bg-secundario rounded-xs px-2 py-1 hover:bg-primario transition duration-150"
+                    className="glass border-2 border-primary text-primary font-semibold px-8 py-4 rounded-xl hover:bg-primary hover:text-dark transition-all text-lg"
                     href={link}
                     target="_blank"
                   >
-                    Mas información
+                    Más Información
                   </Link>
-                </div>
-              )}
+                )}
+              </div>
+            </div>
+
+            {/* Floating Elements */}
+            <div className="absolute bottom-10 left-10 text-6xl opacity-20 animate-float hidden md:block">
+              🎵
+            </div>
+            <div
+              className="absolute top-20 right-10 text-6xl opacity-20 animate-float hidden md:block"
+              style={{ animationDelay: "1s" }}
+            >
+              🎧
             </div>
           </div>
         ))}

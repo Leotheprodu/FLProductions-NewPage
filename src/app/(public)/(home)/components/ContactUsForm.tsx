@@ -18,45 +18,74 @@ export const ContactUsForm = () => {
     window.open(url, "_blank");
   };
   return (
-    <div className="p-3">
-      <h2 className="text-3xl font-bold mb-6">Contacto</h2>
-      <form id="contact" onSubmit={handleSubmit} className="w-80 grid gap-4">
-        <input
-          type="text"
-          name="name"
-          required
-          placeholder="Nombre"
-          className="border p-3 rounded"
-        />
-        <textarea
-          name="message"
-          required
-          placeholder="Mensaje"
-          className="border p-3 rounded"
-          rows={5}
-        ></textarea>
-        <div className="flex justify-between">
-          <div className="flex items-center gap-4">
+    <div className="w-full">
+      <h2 className="text-3xl font-bold mb-2 gradient-text text-center">
+        Contáctanos
+      </h2>
+      <p className="text-gray-600 text-center mb-8 text-sm md:text-base">
+        Lleva tu música al siguiente nivel
+      </p>
+
+      <form id="contact" onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Tu nombre"
+            className="w-full border-2 border-gray-200 p-3 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 hover:border-gray-300"
+          />
+        </div>
+
+        <div>
+          <textarea
+            name="message"
+            required
+            placeholder="Mensaje sobre tu proyecto..."
+            className="w-full border-2 border-gray-200 p-3 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 hover:border-gray-300 resize-none"
+            rows={4}
+          ></textarea>
+        </div>
+
+        <button
+          disabled={sentForm}
+          type="submit"
+          className="w-full bg-gradient-to-r from-primary to-primary-light text-dark font-bold py-3 px-6 rounded-xl hover-lift hover-glow transition-all disabled:opacity-50 disabled:cursor-not-allowed text-base md:text-lg"
+        >
+          <div className="flex items-center justify-center gap-2">
+            <WhatsappIcon className="w-5 h-5" />
+            {sentForm ? "¡Enviado!" : "Enviar WhatsApp"}
+          </div>
+        </button>
+
+        {/* Social Links */}
+        <div className="pt-4 border-t border-gray-200">
+          <div className="flex items-center justify-center gap-6">
             <a
               href="https://www.youtube.com/channel/UCAVKw7wP-yKPGSbCd1BJ7mw"
               target="_blank"
+              className="hover-scale text-primary hover:text-primary-light transition"
+              aria-label="YouTube"
             >
-              <YoutubeIcon className="w-6 h-6 text-primario  hover:cursor-pointer hover:text-primario/50 transition" />
+              <YoutubeIcon className="w-6 h-6" />
             </a>
-            <a href="https://www.facebook.com/FLProductionscr" target="_blank">
-              <FacebookIcon className="w-6 h-6 text-primario  hover:cursor-pointer hover:text-primario/50 transition" />
+            <a
+              href="https://www.facebook.com/FLProductionscr"
+              target="_blank"
+              className="hover-scale text-primary hover:text-primary-light transition"
+              aria-label="Facebook"
+            >
+              <FacebookIcon className="w-6 h-6" />
+            </a>
+            <a
+              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}
+              target="_blank"
+              className="hover-scale text-primary hover:text-primary-light transition"
+              aria-label="WhatsApp"
+            >
+              <WhatsappIcon className="w-6 h-6" />
             </a>
           </div>
-          <button
-            disabled={sentForm}
-            type="submit"
-            className="bg-primario py-2 px-4 rounded hover:bg-primario/50 transition w-28 hover:cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
-          >
-            <div className="flex items-center gap-2">
-              Enviar
-              <WhatsappIcon className="w-6 h-6" />
-            </div>
-          </button>
         </div>
       </form>
     </div>
