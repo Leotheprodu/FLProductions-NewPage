@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -44,8 +44,6 @@ const testimonials: Testimonial[] = [
 ];
 
 export const TestimonialsSection: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section className="section-padding bg-gray-50">
       <div className="container-custom">

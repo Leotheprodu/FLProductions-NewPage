@@ -5,7 +5,6 @@ import { ServicesGrid } from "./components/ServicesGrid";
 import { StatsSection } from "./components/StatsSection";
 import { TestimonialsSection } from "./components/TestimonialsSection";
 import { bannerSliderHomeData } from "@global/bannerSliderHomeData";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
   ExperienceIcon,
   EquipmentIcon,
