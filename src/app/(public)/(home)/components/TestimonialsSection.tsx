@@ -14,32 +14,32 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Carlos Rodríguez",
-    role: "Artista de Reggaeton",
-    text: "El mejor estudio de grabación en el que he trabajado. La calidad del sonido es increíble y Leo sabe exactamente cómo sacar lo mejor de cada artista. Totalmente profesional.",
+    name: "César JS",
+    role: "Artista de DanceHall",
+    text: "El mejor estudio de grabación en el que he trabajado. La calidad del sonido es increíble y Leo sabe exactamente cómo sacar lo mejor en cada sesión. Totalmente profesional.",
+    rating: 5,
+    projectType: "Single - Dancehall",
+  },
+  {
+    name: "Emdi",
+    role: "Artista de Reggaetón",
+    text: "Vivo en Estados Unidos, busqué mucho hasta llegar a FLProductions. Transformó completamente mi música. La atención al detalle en la mezcla y mastering es impresionante. Ahora solo grabo mu canción y envío todos los archivos y Leo hace la magia. Recomendado al 100%.",
     rating: 5,
     projectType: "Single - Reggaeton",
   },
   {
-    name: "María Sánchez",
-    role: "Cantautora",
-    text: "FLProductions transformó completamente mi música. La atención al detalle en la mezcla y mastering es impresionante. Recomendado al 100%.",
-    rating: 5,
-    projectType: "EP - Pop/Balada",
-  },
-  {
-    name: "DJ Tropical",
-    role: "Productor Musical",
+    name: "Beto G",
+    role: "Artista Urbano",
     text: "He comprado varios beats de Leo y siempre son de la más alta calidad. Originales, frescos y listos para trabajar. El mejor productor de la zona.",
     rating: 5,
-    projectType: "Beats - Dancehall/Trap",
+    projectType: "Beats - Dancehall",
   },
   {
-    name: "Banda Los Viajeros",
-    role: "Banda Musical",
+    name: "Rana Roja",
+    role: "Banda de Rock",
     text: "Grabamos nuestro primer álbum con FLProductions y superó todas nuestras expectativas. El equipo, la experiencia de Leo y el ambiente del estudio son de primer nivel.",
     rating: 5,
-    projectType: "Álbum Completo - Rock",
+    projectType: "Album Completo - Rock",
   },
 ];
 

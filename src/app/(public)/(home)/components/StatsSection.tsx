@@ -31,6 +31,60 @@ const stats: Stat[] = [
   },
 ];
 
+const AnimatedCounter: React.FC<{
+  target: number;
+  duration?: number;
+  delay?: number;
+}> = ({ target, duration = 2000, delay = 0 }) => {
+  const [count, setCount] = React.useState(0);
+  const [hasStarted, setHasStarted] = React.useState(false);
+  const elementRef = React.useRef<HTMLSpanElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setHasStarted(true);
+          }, delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [delay]);
+
+  React.useEffect(() => {
+    if (!hasStarted) return;
+
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+      // Easing function for smoother finish
+      const easeOutQuad = (t: number) => t * (2 - t);
+      const currentCount = Math.floor(easeOutQuad(progress) * target);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [hasStarted, target, duration]);
+
+  return <span ref={elementRef}>{count}</span>;
+};
+
 export const StatsSection: React.FC = () => {
   return (
     <section className="section-padding bg-gradient-to-r from-dark via-dark-light to-dark relative overflow-hidden">
@@ -64,7 +118,10 @@ export const StatsSection: React.FC = () => {
             >
               <div className="mb-4">
                 <span className="text-5xl md:text-7xl font-bold gradient-text block">
-                  {stat.number}
+                  <AnimatedCounter
+                    target={parseInt(stat.number)}
+                    delay={index * 200}
+                  />
                   {stat.suffix && (
                     <span className="text-primary-light">{stat.suffix}</span>
                   )}

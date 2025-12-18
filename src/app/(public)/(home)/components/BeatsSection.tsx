@@ -2,26 +2,49 @@
 /* eslint-disable @next/next/no-img-element */
 import { songs } from "@global/songs";
 import { $PlayList, $SelectedSong } from "@stores/player";
-import { useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useStore } from "@nanostores/react";
 import { PlayIcon } from "@/icons/PlayIcon";
 import { StarIcon } from "@/icons/StarIcon";
+import { MicIcon } from "@/icons/MicIcon";
+import { PianoIcon } from "@/icons/PianoIcon";
+import { VideoIcon } from "@/icons/VideoIcon";
+import { SearchIcon } from "@/icons/SearchIcon";
 import { VIPSongCriteria } from "@global/constants";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Tooltip } from "@/components/ui/Tooltip";
+
 export const BeatsSection = () => {
   const selectedSong = useStore($SelectedSong);
-  const sortedSongs = songs?.slice().sort((a, b) => {
-    // Primero los que tienen featured en true
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    // Luego por fecha descendente
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-    return dateB.getTime() - dateA.getTime();
-  });
+  const [search, setSearch] = useState("");
+
+  const sortedSongs = useMemo(() => {
+    return (songs || [])?.slice().sort((a, b) => {
+      // Primero los que tienen featured en true
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      // Luego por fecha descendente
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    });
+  }, []);
+
+  const filteredSongs = useMemo(() => {
+    if (!search) return sortedSongs;
+    const lowerSearch = search.toLowerCase();
+    return sortedSongs.filter(
+      (song) =>
+        song.name.toLowerCase().includes(lowerSearch) ||
+        song.artists.some((a) => a.toLowerCase().includes(lowerSearch)) ||
+        song.tags.some((t) => t.toLowerCase().includes(lowerSearch))
+    );
+  }, [search, sortedSongs]);
 
   const beatLimit = 4;
-  const latestSongs = sortedSongs?.slice(0, beatLimit);
-  const allSongs = sortedSongs?.slice(beatLimit);
+  const latestSongs = filteredSongs?.slice(0, beatLimit);
+  const allSongs = filteredSongs?.slice(beatLimit);
+
   useEffect(() => {
     const songsWithYoutubeId = sortedSongs?.filter((song) => song.youtubeId);
 
@@ -40,262 +63,278 @@ export const BeatsSection = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <section
       id="songs"
-      className="py-16 flex items-center justify-center flex-col gap-6 w-full h-full overflow-hidden"
+      className="py-20 px-4 md:px-8 bg-dark relative overflow-hidden"
     >
-      <div className="snap-always flex flex-col items-center md:flex-row md:flex-wrap gap-6 md:justify-center w-full">
-        {latestSongs.map((song) => (
-          <div
-            id={`song-${song.id}`}
-            key={song.id}
-            onClick={() =>
-              $SelectedSong.set({
-                id: song.id,
-                name: song.name,
-                youtubeId: song.youtubeId,
-                tags: song.tags,
-                artists: song.artists,
-                featured: song.featured,
-                productionDetails: song.productionDetails,
-                date: song.date,
-              })
-            }
-            className={`
-              ${
-                song.productionDetails.RecordingStudio &&
-                VIPSongCriteria.includes(
-                  song.productionDetails.RecordingStudio
-                ) &&
-                song.productionDetails.BeatFrom &&
-                VIPSongCriteria.includes(song.productionDetails.BeatFrom)
-                  ? "bg-secundario/10"
-                  : "bg-white"
-              }
-              ${
-                selectedSong?.id === song.id
-                  ? "scale-105 border-b-2 border-b-secundario/80 shadow-lg"
-                  : ""
-              } relative snap-x transition-transform duration-300 hover:cursor-pointer shadow hover:shadow-xl rounded-md flex flex-col  gap-1 p-4 w-[17rem] h-[13rem] md:h-[20rem] rounded-b-md group`}
-          >
-            <div className="flex justify-between h-2/4 md:h-2/5 w-full">
-              <div className="flex">
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-lg font-semibold">{song.name}</h3>
-                  <p className="text-sm text-gray-500">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+      <div className="container-custom relative z-10">
+        <SectionHeader
+          title="Nuestro Portafolio"
+          subtitle="Explora mis trabajos más recientes y destacados. Calidad profesional en cada detalle."
+          gradient
+          light
+        />
+
+        {/* Search Bar */}
+        <div className="w-full max-w-5xl mx-auto mb-10 relative animate-fade-in stagger-1">
+          <div className="relative group">
+            <SearchIcon className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors text-xl" />
+            <input
+              type="text"
+              placeholder="Buscar por canción, artista o género..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-14 pr-6 py-5 bg-dark-lighter/50 border border-white/10 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all text-white text-lg placeholder:text-gray-500 backdrop-blur-3xl shadow-2xl"
+            />
+          </div>
+        </div>
+
+        {/* Legend */}
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-14 text-[10px] md:text-xs text-gray-400 animate-fade-in stagger-2 opacity-80">
+          <div className="flex items-center gap-2 group">
+            <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-primary group-hover:scale-110 transition-transform">
+              <MicIcon />
+            </div>
+            <span className="uppercase tracking-widest font-medium">
+              Grabación en FLProductions.
+            </span>
+          </div>
+          <div className="flex items-center gap-2 group">
+            <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-primary group-hover:scale-110 transition-transform">
+              <PianoIcon />
+            </div>
+            <span className="uppercase tracking-widest font-medium">
+              Beat / Producción FLProductions.
+            </span>
+          </div>
+          <div className="flex items-center gap-2 group">
+            <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-primary group-hover:scale-110 transition-transform">
+              <VideoIcon />
+            </div>
+            <span className="uppercase tracking-widest font-medium">
+              Video en FLProductions.
+            </span>
+          </div>
+        </div>
+
+        {/* Featured Latest Songs */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 px-4">
+          {latestSongs.map((song, index) => (
+            <div
+              key={song.id}
+              onClick={() => $SelectedSong.set(song)}
+              className={`
+                relative p-4 rounded-2xl transition-all duration-500 cursor-pointer group hover-lift
+                ${
+                  selectedSong?.id === song.id
+                    ? "glass-dark border-primary/40 ring-2 ring-primary/20 shadow-glow"
+                    : "glass-dark border-white/5 hover:border-white/20"
+                }
+                animate-scale-in
+              `}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Thumbnail with Overlay */}
+              <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                <img
+                  src={`https://img.youtube.com/vi/${song.youtubeId}/mqdefault.jpg`}
+                  alt={song.name}
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-black p-0 scale-0 group-hover:scale-110 transition-transform duration-300 shadow-glow shadow-primary/40">
+                    <PlayIcon className="scale-125 translate-x-px" />
+                  </div>
+                </div>
+                {song.featured && (
+                  <div className="absolute top-2 right-2 flex gap-1">
+                    <div className="bg-accent/90 text-black flex items-center justify-center w-7 h-7 rounded-full shadow-lg backdrop-blur-md p-0">
+                      <StarIcon className="w-4 h-4" />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Info */}
+              <div className="space-y-2">
+                <h3 className="font-bold text-lg text-white line-clamp-1 group-hover:text-primary transition-colors">
+                  {song.name}
+                </h3>
+                <p className="text-gray-400 text-sm line-clamp-1">
+                  {song.artists.join(", ")}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {song.productionDetails.RecordingStudio && (
+                    <Tooltip
+                      content={`Grabación: ${song.productionDetails.RecordingStudio}`}
+                    >
+                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-primary-light">
+                        <MicIcon className="text-sm" />
+                      </div>
+                    </Tooltip>
+                  )}
+                  {song.productionDetails.BeatFrom && (
+                    <Tooltip
+                      content={`Beat: ${song.productionDetails.BeatFrom}`}
+                    >
+                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-primary-light">
+                        <PianoIcon className="text-sm" />
+                      </div>
+                    </Tooltip>
+                  )}
+                  {song.productionDetails.VideoStudio && (
+                    <Tooltip
+                      content={`Video: ${song.productionDetails.VideoStudio}`}
+                    >
+                      <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 text-primary-light">
+                        <VideoIcon className="text-sm" />
+                      </div>
+                    </Tooltip>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* All Songs List */}
+        <div className="max-w-4xl mx-auto space-y-3 px-4">
+          {allSongs.length > 0 && (
+            <h3 className="text-xl font-semibold text-gray-400 mb-6 flex items-center gap-3">
+              <span className="w-12 h-px bg-white/20"></span>
+              Todas las producciones
+            </h3>
+          )}
+
+          <div className="space-y-2 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+            {allSongs.map((song, index) => (
+              <div
+                key={song.id}
+                onClick={() => $SelectedSong.set(song)}
+                className={`
+                  flex items-center gap-4 p-3 rounded-xl transition-all duration-300 cursor-pointer border
+                  ${
+                    selectedSong?.id === song.id
+                      ? "glass border-primary/50 bg-primary/10"
+                      : "bg-white/5 border-white/5 hover:border-white/20 hover:bg-white/10"
+                  }
+                  animate-fade-in-up
+                `}
+                style={{ animationDelay: `${(index + 4) * 0.05}s` }}
+              >
+                <div className="relative w-16 h-10 rounded-lg overflow-hidden flex-shrink-0">
+                  <img
+                    src={`https://img.youtube.com/vi/${song.youtubeId}/mqdefault.jpg`}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                  {selectedSong?.id === song.id && (
+                    <div className="absolute inset-0 bg-primary/40 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex-grow min-w-0">
+                  <h4
+                    className={`font-medium ${
+                      selectedSong?.id === song.id
+                        ? "text-primary"
+                        : "text-white"
+                    } truncate`}
+                  >
+                    {song.name}
+                  </h4>
+                  <p className="text-gray-500 text-xs truncate uppercase tracking-wider">
                     {song.artists.join(", ")}
                   </p>
                 </div>
-              </div>
-              <div className="flex items-center justify-center absolute right-0">
-                {song.productionDetails.RecordingStudio &&
-                  VIPSongCriteria.includes(
-                    song.productionDetails.RecordingStudio
-                  ) && <StarIcon className="w-4 h-4 text-secundario" />}
-                {song.productionDetails.BeatFrom &&
-                  VIPSongCriteria.includes(song.productionDetails.BeatFrom) && (
-                    <StarIcon className="w-4 h-4 text-secundario" />
-                  )}
-                {song.productionDetails.VideoStudio &&
-                  VIPSongCriteria.includes(
-                    song.productionDetails.VideoStudio
-                  ) && <StarIcon className="w-4 h-4 text-secundario" />}
-                <small className="group-hover:scale-150 rounded-full p-1 transition-all duration-300 ">
-                  <PlayIcon />
-                </small>
-              </div>
-            </div>
-            <div>
-              <div className="h-1/4 md:h-1/5 w-full text-sm text-gray-600">
-                <p className="flex my-2">{song.tags.join(", ")}</p>
+
+                <div className="hidden md:flex flex-wrap gap-2 text-xs text-gray-500 italic">
+                  {song.tags.slice(0, 2).join(" • ")}
+                </div>
 
                 <div className="flex gap-2">
                   {song.productionDetails.RecordingStudio && (
-                    <small
-                      className={`flex p-1 rounded-md bg-gray-100 ${
-                        VIPSongCriteria.includes(
-                          song.productionDetails.RecordingStudio
-                        )
-                          ? "border-1 border-primario"
-                          : ""
-                      }`}
+                    <Tooltip
+                      content={`Grabación: ${song.productionDetails.RecordingStudio}`}
                     >
-                      <span className="">🎙️</span>
-                      {song.productionDetails.RecordingStudio}
-                    </small>
+                      <MicIcon
+                        className={`text-sm ${
+                          VIPSongCriteria.includes(
+                            song.productionDetails.RecordingStudio
+                          )
+                            ? "text-primary"
+                            : "text-gray-400 opacity-40"
+                        }`}
+                      />
+                    </Tooltip>
                   )}
                   {song.productionDetails.BeatFrom && (
-                    <small
-                      className={`
-                  flex p-1 rounded-md bg-gray-100 ${
-                    VIPSongCriteria.includes(song.productionDetails.BeatFrom)
-                      ? "border-1 border-primario"
-                      : ""
-                  }
-                  `}
+                    <Tooltip
+                      content={`Beat: ${song.productionDetails.BeatFrom}`}
                     >
-                      <span className="">🎹</span>
-                      {song.productionDetails.BeatFrom}
-                    </small>
+                      <PianoIcon
+                        className={`text-sm ${
+                          VIPSongCriteria.includes(
+                            song.productionDetails.BeatFrom
+                          )
+                            ? "text-primary"
+                            : "text-gray-400 opacity-40"
+                        }`}
+                      />
+                    </Tooltip>
                   )}
                   {song.productionDetails.VideoStudio && (
-                    <small
-                      className={`
-                  flex p-1 rounded-md bg-gray-100 ${
-                    VIPSongCriteria.includes(song.productionDetails.VideoStudio)
-                      ? "border-1 border-primario"
-                      : ""
-                  }
-                  `}
+                    <Tooltip
+                      content={`Video: ${song.productionDetails.VideoStudio}`}
                     >
-                      <span className="">🎥</span>
-                      {song.productionDetails.VideoStudio}
-                    </small>
+                      <VideoIcon
+                        className={`text-sm ${
+                          VIPSongCriteria.includes(
+                            song.productionDetails.VideoStudio
+                          )
+                            ? "text-primary"
+                            : "text-gray-400 opacity-40"
+                        }`}
+                      />
+                    </Tooltip>
                   )}
                 </div>
-              </div>
-            </div>
-            <div className="flex md:flex-col items-center gap-4 justify-center md:h-2/5 h-1/4 w-full">
-              <img
-                src={`https://img.youtube.com/vi/${song?.youtubeId}/mqdefault.jpg`}
-                alt={`imagen de ${song.name}`}
-                className="rounded-full md:h-full md:w-full max-h-28 h-10 w-10  md:rounded-sm object-cover"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
 
-      <div className="shadow flex flex-col items-center justify-baseline max-h-[40rem] overflow-y-auto w-full max-w-[50rem] gap-1 p-4">
-        {allSongs.map((song) => (
-          <div
-            id={`song-${song.id}`}
-            key={song.id}
-            onClick={() =>
-              $SelectedSong.set({
-                id: song.id,
-                name: song.name,
-                youtubeId: song.youtubeId,
-                tags: song.tags,
-                artists: song.artists,
-                featured: song.featured,
-                productionDetails: song.productionDetails,
-                date: song.date,
-              })
-            }
-            className={`
-              ${
-                song.productionDetails.RecordingStudio &&
-                VIPSongCriteria.includes(
-                  song.productionDetails.RecordingStudio
-                ) &&
-                song.productionDetails.BeatFrom &&
-                VIPSongCriteria.includes(song.productionDetails.BeatFrom)
-                  ? "bg-secundario/10"
-                  : "bg-white"
-              }
-              ${
-                selectedSong?.id === song.id
-                  ? "bg-secundario/40 border-b-2 border-b-secundario/80 shadow-lg"
-                  : " border-b-2 border-b-gray-200"
-              } relative snap-x transition-transform duration-300 hover:cursor-pointer hover:border-primario justify-center items-center flex gap-1 p-4 w-full md:h-[5rem] group`}
-          >
-            <div className="flex items-center w-2/5 h-full">
-              <div className="flex flex-col ">
-                <div className="flex flex-col gap-1">
-                  <div className="flex flex-wrap gap-1 items-center">
-                    <h3 className="text-lg font-semibold">{song.name}</h3>
-                  </div>
-                  <p className="flex text-sm text-gray-500">
-                    {song.artists.join(", ")}
-                  </p>
+                <div className="flex-shrink-0 ml-2">
+                  <PlayIcon
+                    className={`text-lg ${
+                      selectedSong?.id === song.id
+                        ? "text-primary"
+                        : "text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                    }`}
+                  />
                 </div>
               </div>
-              <div className=" absolute right-2 flex items-center justify-center">
-                {song.productionDetails.RecordingStudio &&
-                  VIPSongCriteria.includes(
-                    song.productionDetails.RecordingStudio
-                  ) && <StarIcon className="w-4 h-4 text-secundario" />}
-                {song.productionDetails.BeatFrom &&
-                  VIPSongCriteria.includes(song.productionDetails.BeatFrom) && (
-                    <StarIcon className="w-4 h-4 text-secundario" />
-                  )}
-                {song.productionDetails.VideoStudio &&
-                  VIPSongCriteria.includes(
-                    song.productionDetails.VideoStudio
-                  ) && <StarIcon className="w-4 h-4 text-secundario" />}
-                <small className="group-hover:scale-150 flex items-center justify-center rounded-full p-1 transition-all duration-300">
-                  <PlayIcon />
-                </small>
+            ))}
+
+            {filteredSongs.length === 0 && (
+              <div className="text-center py-12 glass border border-white/10 rounded-2xl">
+                <p className="text-gray-500">
+                  No se encontraron canciones que coincidan con tu búsqueda.
+                </p>
+                <button
+                  onClick={() => setSearch("")}
+                  className="mt-4 text-primary font-medium hover:underline"
+                >
+                  Ver todas las canciones
+                </button>
               </div>
-            </div>
-            <div className="flex flex-col w-1/5 md:w-2/5 justify-center items-baseline h-full">
-              <p className=" text-sm text-gray-600 ">{song.tags.join(", ")}</p>
-              <div className="flex flex-col md:flex-row gap-1">
-                {song.productionDetails.RecordingStudio && (
-                  <small
-                    className={`flex md:p-1 rounded-md md:bg-gray-100 ${
-                      VIPSongCriteria.includes(
-                        song.productionDetails.RecordingStudio
-                      )
-                        ? "md:border-1 md:border-primario"
-                        : ""
-                    }`}
-                  >
-                    <span className="">🎙️</span>
-                    {song.productionDetails.RecordingStudio}
-                  </small>
-                )}
-                {song.productionDetails.BeatFrom && (
-                  <small
-                    className={`
-                     flex md:p-1 rounded-md md:bg-gray-100 ${
-                       VIPSongCriteria.includes(song.productionDetails.BeatFrom)
-                         ? "md:border-1 md:border-primario"
-                         : ""
-                     }
-                      `}
-                  >
-                    <span className="">🎹</span>
-                    {song.productionDetails.BeatFrom}
-                  </small>
-                )}
-                {song.productionDetails.VideoStudio && (
-                  <small
-                    className={`
-                     flex md:p-1 rounded-md md:bg-gray-100 ${
-                       VIPSongCriteria.includes(
-                         song.productionDetails.VideoStudio
-                       )
-                         ? "md:border-1 md:border-primario"
-                         : ""
-                     }
-                      `}
-                  >
-                    <span className="">🎥</span>
-                    {song.productionDetails.VideoStudio}
-                  </small>
-                )}
-              </div>
-              <div className="flex gap-2 items-center">
-                {/* <small className=" md:hidden flex">
-                  {song.tags.join(", ")}
-                </small> */}
-                {/* <small className=" md:flex md:p-1 md:rounded-md md:h-7 md:bg-gray-100">
-                  {song.productionDetails.RecordingStudio}
-                </small> */}
-              </div>
-            </div>
-            <div className="flex items-center gap-4 justify-center w-1/5 h-full">
-              <img
-                src={`https://img.youtube.com/vi/${song?.youtubeId}/mqdefault.jpg`}
-                alt={`imagen de ${song.name}`}
-                className="h-15 w-15 object-cover border-1 border-secundario shadow hidden md:flex"
-              />
-            </div>
+            )}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

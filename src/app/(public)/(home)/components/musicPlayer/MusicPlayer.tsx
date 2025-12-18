@@ -119,33 +119,35 @@ export const MusicPlayer = () => {
           <div
             className={`${
               t.visible ? "animate-enter" : "animate-leave"
-            } group pointer-events-auto relative mt-[3rem] flex flex-col rounded-lg bg-white p-2 shadow-lg ring-1 ring-amber-100 ring-opacity-5 w-[12rem]`}
+            } group pointer-events-auto relative mt-[3rem] flex flex-col rounded-2xl glass-dark-strong p-3 shadow-2xl border border-white/10 w-[14rem] animate-scale-in`}
           >
             <button
               onClick={() => toast.remove("beat-toast")}
-              className="invisible absolute right-2 top-2 m-0 flex h-4 w-4 items-center justify-center rounded-full bg-white hover:cursor-pointer p-1 text-center duration-200 group-hover:visible"
+              className="absolute -right-2 -top-2 m-0 flex h-6 w-6 items-center justify-center rounded-full bg-dark-light border border-white/10 hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200 group-hover:opacity-100 opacity-0 cursor-pointer"
             >
-              <small className="text-red-500">X</small>
+              <small className="text-red-500 font-bold">×</small>
             </button>
             <div className="flex flex-col justify-center">
-              <img
-                src={`https://img.youtube.com/vi/${selectedSong?.youtubeId}/mqdefault.jpg`}
-                alt={`imagen de ${selectedSong.name}`}
-                className="h-[5rem] w-full rounded-xl object-cover"
-              />
-              <div className="flex flex-col items-baseline gap-1 py-1">
-                <h3 className="font-semibold text-gray-900">
+              <div className="relative overflow-hidden rounded-xl mb-3">
+                <img
+                  src={`https://img.youtube.com/vi/${selectedSong?.youtubeId}/mqdefault.jpg`}
+                  alt={selectedSong.name}
+                  className="h-[6rem] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div className="flex flex-col items-baseline gap-0.5 py-1 mb-2">
+                <h3 className="font-bold text-white text-base line-clamp-1">
                   {selectedSong.name}
                 </h3>
-                <h4>
-                  <span className="text-gray-500">por </span>
+                <h4 className="text-gray-400 text-xs line-clamp-1">
                   {selectedSong.artists?.join(", ")}
                 </h4>
               </div>
             </div>
 
             <Link
-              className="p-2 bg-primario text-center text-sm font-semibold text-secundario hover:cursor-pointer rounded-2xl hover:text-secundario/50 transition"
+              className="py-2.5 bg-primary text-center text-xs font-bold text-black hover:bg-primary-light rounded-xl transition-all duration-300 shadow-glow shadow-primary/20"
               target="_blank"
               href={`https://www.youtube.com/watch?v=${selectedSong?.youtubeId}`}
               onClick={() => {
@@ -153,7 +155,7 @@ export const MusicPlayer = () => {
                 setEnded(false);
               }}
             >
-              Ver Video
+              VER VIDEO COMPLETO
             </Link>
           </div>
         ),

@@ -92,20 +92,7 @@ export default function Home() {
         <StatsSection />
 
         {/* Portfolio/Music Section */}
-        <section id="songs" className="py-20 bg-white">
-          <div className="container-custom">
-            <SectionHeader
-              title="Nuestro Portfolio"
-              subtitle="Escucha algunos de los trabajos realizados en nuestro estudio"
-              gradient={true}
-              centered={true}
-              subtitleMaxWidth="max-w-5xl"
-            />
-            <div className="mt-12">
-              <BeatsSection />
-            </div>
-          </div>
-        </section>
+        <BeatsSection />
 
         {/* Testimonials */}
         <TestimonialsSection />

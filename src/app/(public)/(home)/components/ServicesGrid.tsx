@@ -72,6 +72,7 @@ export const ServicesGrid: React.FC = () => {
           title="Servicios Profesionales"
           subtitle="Todo lo que necesitas para llevar tu música al más alto nivel"
           gradient={true}
+          light={true}
           subtitleMaxWidth="max-w-5xl"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
