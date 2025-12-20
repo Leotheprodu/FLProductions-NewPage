@@ -44,9 +44,9 @@ export function BannerSlider({ datos }: Props) {
 
             {/* Content */}
             <div className="relative z-10 glass-dark p-8 md:p-12 rounded-3xl text-white max-w-[50rem] mx-4 border-2 border-primary/30 hover-glow animate-fade-in-up">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight">
                 {title}
-              </h1>
+              </h2>
               <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
                 {description}
               </p>

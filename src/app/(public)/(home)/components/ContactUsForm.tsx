@@ -28,7 +28,11 @@ export const ContactUsForm = () => {
 
       <form id="contact" onSubmit={handleSubmit} className="space-y-4">
         <div>
+          <label htmlFor="name" className="sr-only">
+            Nombre
+          </label>
           <input
+            id="name"
             type="text"
             name="name"
             required
@@ -38,7 +42,11 @@ export const ContactUsForm = () => {
         </div>
 
         <div>
+          <label htmlFor="message" className="sr-only">
+            Mensaje
+          </label>
           <textarea
+            id="message"
             name="message"
             required
             placeholder="Mensaje sobre tu proyecto..."
