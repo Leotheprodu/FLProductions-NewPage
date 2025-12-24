@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Link from "next/link";
+import { Header } from "@/components/Header";
 import { MusicPlayer } from "./(public)/(home)/components/musicPlayer/MusicPlayer";
 import {
   appDescription,
@@ -117,32 +118,7 @@ export default function RootLayout({
       <body className="bg-white">
         <Toaster />
         <main className="w-full">
-          <header className="container mx-auto flex flex-col md:flex-row items-center justify-between py-5 px-10">
-            <Link
-              href="/"
-              className="flex items-center space-x-2 logoFLP text-2xl font-bold text-primario"
-            >
-              FLProductions
-            </Link>
-            <nav className="space-x-4 text-sm font-medium">
-              <Link className="hover:text-primario transition" href="#songs">
-                Música
-              </Link>
-              <Link
-                target="_blank"
-                className="hover:text-primario transition"
-                href="https://www.ackeebeats.xyz/"
-              >
-                Ackee Beats
-              </Link>
-              <Link className="hover:text-primario transition" href="#about">
-                Nosotros
-              </Link>
-              <Link className="hover:text-primario transition" href="#contact">
-                Contacto
-              </Link>
-            </nav>
-          </header>
+          <Header />
           {children}
           <MusicPlayer />
           {/* Footer */}

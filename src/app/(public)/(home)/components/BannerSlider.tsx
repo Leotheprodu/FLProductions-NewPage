@@ -83,17 +83,6 @@ export function BannerSlider({ datos }: Props) {
                 )}
               </div>
             </div>
-
-            {/* Floating Elements */}
-            <div className="absolute bottom-10 left-10 text-6xl opacity-20 animate-float hidden md:block">
-              🎵
-            </div>
-            <div
-              className="absolute top-20 right-10 text-6xl opacity-20 animate-float hidden md:block"
-              style={{ animationDelay: "1s" }}
-            >
-              🎧
-            </div>
           </div>
         ))}
       </Carousel>

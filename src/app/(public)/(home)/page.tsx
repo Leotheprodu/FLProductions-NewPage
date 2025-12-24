@@ -13,11 +13,13 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Truly Full Width */}
-      <BannerSlider datos={bannerSliderHomeData} />
+      <section data-header-theme="dark">
+        <BannerSlider datos={bannerSliderHomeData} />
+      </section>
 
       <div className="w-full">
         {/* Introduction Section */}
-        <section className="section-padding bg-white">
+        <section data-header-theme="light" className="section-padding bg-white">
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 max-w-5xl mx-auto leading-tight">
               <span className="gradient-text">FLProductions</span>, estudio de
@@ -82,22 +84,32 @@ export default function Home() {
         </section>
 
         {/* Services Grid */}
-        <ServicesGrid />
+        <div data-header-theme="dark">
+          <ServicesGrid />
+        </div>
 
         {/* Stats Section */}
-        <StatsSection />
+        <div data-header-theme="dark">
+          <StatsSection />
+        </div>
 
         {/* Portfolio/Music Section */}
-        <BeatsSection />
+        <div data-header-theme="dark">
+          <BeatsSection />
+        </div>
 
         {/* Ackee Beats Special Mention */}
-        <AckeeBeatsMention />
+        <div data-header-theme="dark">
+          <AckeeBeatsMention />
+        </div>
 
         {/* Testimonials */}
-        <TestimonialsSection />
+        <div data-header-theme="light">
+          <TestimonialsSection />
+        </div>
 
         {/* About & Contact Section - Improved Layout and Compactness */}
-        <section className="bg-gray-50 py-24">
+        <section data-header-theme="dark" className="bg-gray-50 py-24">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100">
               {/* About Column */}
