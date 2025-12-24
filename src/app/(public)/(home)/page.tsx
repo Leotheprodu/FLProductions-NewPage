@@ -4,12 +4,10 @@ import { BannerSlider } from "./components/BannerSlider";
 import { ServicesGrid } from "./components/ServicesGrid";
 import { StatsSection } from "./components/StatsSection";
 import { TestimonialsSection } from "./components/TestimonialsSection";
+import { AckeeBeatsMention } from "./components/AckeeBeatsMention";
 import { bannerSliderHomeData } from "@global/bannerSliderHomeData";
-import {
-  ExperienceIcon,
-  EquipmentIcon,
-  VersatilityIcon,
-} from "@/components/ui/Icons";
+import { ExperienceIcon, VersatilityIcon } from "@/components/ui/Icons";
+import { PianoIcon } from "@/icons/PianoIcon";
 
 export default function Home() {
   return (
@@ -22,9 +20,8 @@ export default function Home() {
         <section className="section-padding bg-white">
           <div className="container-custom text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-8 max-w-5xl mx-auto leading-tight">
-              <span className="gradient-text">FLProductions</span> - Estudio de
-              Grabación y Producción Musical en{" "}
-              <span className="text-primary">Costa Rica</span>
+              <span className="gradient-text">FLProductions</span>, estudio de
+              grabación y producción musical en Costa Rica
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
               Bienvenidos a FLProductions, el estudio líder de grabación y
@@ -57,7 +54,7 @@ export default function Home() {
                 </div>
                 <div className="glass-light p-8 rounded-3xl hover-lift border-2 border-primary/10">
                   <div className="text-primary mb-6">
-                    <EquipmentIcon className="w-16 h-16" />
+                    <PianoIcon className="w-16 h-16" />
                   </div>
                   <h3 className="font-bold text-2xl mb-4 text-gray-900">
                     Equipos de Primer Nivel
@@ -92,6 +89,9 @@ export default function Home() {
 
         {/* Portfolio/Music Section */}
         <BeatsSection />
+
+        {/* Ackee Beats Special Mention */}
+        <AckeeBeatsMention />
 
         {/* Testimonials */}
         <TestimonialsSection />
