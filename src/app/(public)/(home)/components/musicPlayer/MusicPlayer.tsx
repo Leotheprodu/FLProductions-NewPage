@@ -123,7 +123,7 @@ export const MusicPlayer = () => {
           >
             <button
               onClick={() => toast.remove("beat-toast")}
-              className="absolute -right-2 -top-2 m-0 flex h-6 w-6 items-center justify-center rounded-full bg-dark-light border border-white/10 hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200 group-hover:opacity-100 opacity-0 cursor-pointer"
+              className="absolute -right-2 -top-2 m-0 flex h-6 w-6 items-center justify-center rounded-full bg-dark-light border border-white/10 hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200 cursor-pointer"
             >
               <small className="text-red-500 font-bold">×</small>
             </button>
@@ -159,7 +159,7 @@ export const MusicPlayer = () => {
             </Link>
           </div>
         ),
-        { id: "beat-toast", duration: 15000, position: "top-right" }
+        { id: "beat-toast", duration: 5000, position: "top-right" }
       );
     }
 

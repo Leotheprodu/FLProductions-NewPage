@@ -1,6 +1,5 @@
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
-import Link from "next/link";
 import { Header } from "@/components/Header";
 import { MusicPlayer } from "./(public)/(home)/components/musicPlayer/MusicPlayer";
 import {
